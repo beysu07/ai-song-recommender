@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>🔮 AI Şarkı Falı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #eee;
+            text-align: center;
+            padding: 50px;
+        }
+        input {
+            width: 60%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: none;
+        }
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .box {
+            margin-top: 30px;
+            background: #222;
+            padding: 25px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🔮 AI Şarkı Falı</h1>
+
+<form method="POST">
+    <input
+        type="text"
+        name="niyet"
+        placeholder="Niyetini yaz (ör: her şey yoluna girecek mi)"
+        required
+    >
+    <br>
+    <button type="submit">Falına Bak</button>
+</form>
+
+{% if sarki %}
+<div class="box">
+    <h2>🎧 Şarkı</h2>
+    <p>{{ sarki }}</p>
+
+    <h2>✨ Fal Yorumu</h2>
+    <p>{{ yorum }}</p>
+
+    <small>🧠 Analiz: {{ analiz }}</small>
+</div>
+{% endif %}
+
+</body>
+</html>
